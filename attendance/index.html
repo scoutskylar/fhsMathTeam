@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="header-title-wrapper noselect">
-            <a href="" class="header-title"><span>FHS</span><span>Math</span></a>
+            <a href="" class="header-title"><span>FHS</span>&#8203;<span>Math</span></a>
         </div>
         <div class="header-nav">
             <div>
@@ -24,10 +24,16 @@
     </header>
     <main>
         <h1 class="body-title">Attendance</h1>
-        <p>We haven&apos;t gotten this far yet.</p>
+        <form method="POST" action="sign-in.php">
+            <p>Enter your name and press "Sign In" so we know you were here today!</p>
+            <p>
+                <label for="attendance-name">Name:</label>
+                <input type="text" placeholder="e.g. Leonhard Euler" id="attendance-name" required onckeypress="if(e.keyCode==13)document.getElementById('attendance-submit').click()">
+            </p>
+            <p>
+                <input type="submit" value="Sign In" id="attendance-submit">
+            </p>
+        </form>
     </main>
-    <footer>
-        <!-- <p>Footer</p> -->
-    </footer>
 </body>
 </html>
