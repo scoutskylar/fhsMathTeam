@@ -35,5 +35,14 @@
             </p>
         </form>
     </main>
+    <script>
+        let mathematicians =
+        "Daniel Bernoulli,René Descartes,Albert Einstein,Carl Gauss," +
+        "John Napier,Isaac Newton,Blaise Pascal,Srinivasa Ramanujan," +
+        "Bernhard Riemann,Alan Turing,Andrew Wiles";
+        mathematicians = mathematicians.split(',');
+        document.getElementById('attendance-name').setAttribute('placeholder',
+          "e.g. " + mathematicians[Math.floor(Math.random() * mathematicians.length)]);
+    </script>
 </body>
 </html>
