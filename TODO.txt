@@ -1,0 +1,7 @@
+  - Make warning sign ("!" in triangle) a picture
+  - Make a logo
+      - change icon on all HTML pages
+      - add to [Microsoft Azure]
+
+
+  [Microsoft Azure]: https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/Branding/quickStartType//sourceType/Microsoft_AAD_IAM/appId/ade09434-fe8b-4e1f-a78e-881a7daa9119/objectId/c06e17b5-36d1-468a-8ea4-c8c5779750b5/isMSAApp/true/defaultBlade/Overview

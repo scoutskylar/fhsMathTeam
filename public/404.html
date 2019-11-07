@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <!-- <script>
+    //   if (window.location.pathname.indexOf('/public') === 0) {
+    //     document.getElementsByTagName('base')[0].href += 'public/';
+    //   }
+    </script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/ico" href="favicon-placeholder-v2.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/boxes.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>404 - FHSMath</title>
+</head>
+<body>
+    <header>
+        <div class="header-title-wrapper noselect">
+            <a href="" class="header-title"><span>FHS</span>&#8203;<span>Math</span></a>
+        </div>
+        <div class="header-nav">
+            <div>
+                <div>
+                    <a href="">Home</a>
+                    <a href="attendance">Attendance</a>
+                    <a href="schedule">Schedule</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1 class="body-title">404 &divide; sinc(0)</h1>
+        <p>
+            That page doesn't exist. Could I interest you in the <a href="">home</a> page?
+            There's <span id="404-pages-count">very few</span> pages on the entire site. 
+        </p>
+    </main>
+    
+    <script>
+      try {
+        document.getElementById('404-pages-count').innerText = 'only ' + document.getElementsByClassName('header-nav')[0].children[0].children.length;
+      } catch (err) {
+        console.log('I couldn\'t figure out the number of pages. Someone must have changed something.');
+      }
+    </script>
+
+    <!-- FIREBASE -->
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js" onerror="console.log('Firebase core didn\'t load.')"></script>
+
+    <!-- Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+    <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyA_9ZR6kJBOvdipEswlp0JC-wzw5slo9HI",
+        authDomain: "fhsmath.firebaseapp.com",
+        databaseURL: "https://fhsmath.firebaseio.com",
+        projectId: "fhsmath",
+        storageBucket: "fhsmath.appspot.com",
+        messagingSenderId: "800574817607",
+        appId: "1:800574817607:web:b0a9b9664ef9e9a13df862",
+        measurementId: "G-02NY8SGCTJ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
+</body>
+</html>

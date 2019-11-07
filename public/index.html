@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/ico" href="favicon-placeholder-v2.ico">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/boxes.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home - FHSMath</title>
 </head>
@@ -16,9 +17,11 @@
         </div>
         <div class="header-nav">
             <div>
-                <a href="">Home</a>
-                <a href="attendance">Attendance</a>
-                <a href="schedule">Schedule</a>
+                <div>
+                    <a href="">Home</a>
+                    <a href="attendance">Attendance</a>
+                    <a href="schedule">Schedule</a>
+                </div>
             </div>
         </div>
     </header>
@@ -26,7 +29,7 @@
         <div>
             <h1 class="body-title">Home</h1>
             <p>
-                This is the website for Fishers High Schools&apos; Math Team.
+                This is the website for Fishers High Schools' Math Team.
                 We participate in a number of math contests both at FHS and local colleges
                 throughout the school year. We welcome any level of student
                 who likes math and encourage everyone to engage in
@@ -55,5 +58,31 @@
             </p>
         </div>
     </main>
+    
+    <!-- FIREBASE -->
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js" onerror="console.log('Firebase core didn\'t load.')"></script>
+
+    <!-- Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+    <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyA_9ZR6kJBOvdipEswlp0JC-wzw5slo9HI",
+        authDomain: "fhsmath.firebaseapp.com",
+        databaseURL: "https://fhsmath.firebaseio.com",
+        projectId: "fhsmath",
+        storageBucket: "fhsmath.appspot.com",
+        messagingSenderId: "800574817607",
+        appId: "1:800574817607:web:b0a9b9664ef9e9a13df862",
+        measurementId: "G-02NY8SGCTJ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
 </body>
 </html>

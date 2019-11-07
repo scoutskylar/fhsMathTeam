@@ -1,0 +1,54 @@
+.warning-box,
+.error-box,
+.confirmed-box,
+.info-box
+{
+  display: inline-block;
+  color: black;
+  border: 2px solid;
+  padding: 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.warning-box {
+  background-color: yellow;
+  border-color: red;
+}
+
+.warning-box,
+.error-box
+{
+  padding-top: 0;
+  padding-top: calc(6px - 0.5rem);
+}
+
+/* exclamation mark icon */
+.warning-box::before,
+.error-box::before {
+  content: '\26a0';
+  /* content: url('TODO: make a picture icon'); */
+  font-size: 1.5rem;
+  position: relative;
+  top: 0.1rem;
+  margin-right: 0.3rem;
+}
+
+.warning-box a {
+  color: blue;
+}
+
+.error-box {
+  background-color: rgb(255, 204, 204);
+  border-color: red;
+}
+
+.confirmed-box {
+  background-color: palegreen;
+  border-color: green;
+}
+
+.info-box {
+  background-color: rgb(216, 216, 216);
+  border-color: black;
+}

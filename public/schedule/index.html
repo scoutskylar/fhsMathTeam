@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="..">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/ico" href="favicon-placeholder-v2.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/boxes.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Schedule - FHSMath</title>
+</head>
+<body>
+    <header>
+        <div class="header-title-wrapper noselect">
+            <a href="" class="header-title"><span>FHS</span>&#8203;<span>Math</span></a>
+        </div>
+        <div class="header-nav">
+            <div>
+                <div>
+                    <a href="">Home</a>
+                    <a href="attendance">Attendance</a>
+                    <a href="schedule">Schedule</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1 class="body-title">Schedule</h1>
+        <p>Here are some events that we are participating in this year:</p>
+        <table class="schedule-table">
+            <span class="info-box">Coming &ldquo;soon!&rdquo;</span>
+            <!-- <thead>
+                <tr>
+                    <th scope="col">Event</td>
+                    <th scope="col">UNIX Epoch Timestamp</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>Rose Hulman Contest</p>
+                        <img src="http://www.rose-hulman.edu/mathREU/images/logo.jpg" alt="" class="schedule-event-picture" style="width: 300px; min-height: 82.375px;">
+                    </td>
+                    <td>
+                        <p>1573909200</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Franklin College Math Day</p>
+                        <img src="https://franklincollege.edu/wp-content/uploads/2018/07/logo-FC-stack.svg" alt="" class="schedule-event-picture white-img-background picture-padding" style="width: 300px; min-height: 102.78px;">
+                    </td>
+                    <td>
+                        <p>1574510400</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>AIME Contest</p>
+                        <img src="https://www.maa.org/sites/all/themes/maa/images/logo.png" alt="" class="schedule-event-picture white-img-background picture-padding" style="width: 210px; min-height: 90px;">
+                    </td>
+                    <td>
+                        <p>1583899200</p>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </main>
+    
+    <!-- FIREBASE -->
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js" onerror="console.log('Firebase core didn\'t load.')"></script>
+
+    <!-- Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+    <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyA_9ZR6kJBOvdipEswlp0JC-wzw5slo9HI",
+        authDomain: "fhsmath.firebaseapp.com",
+        databaseURL: "https://fhsmath.firebaseio.com",
+        projectId: "fhsmath",
+        storageBucket: "fhsmath.appspot.com",
+        messagingSenderId: "800574817607",
+        appId: "1:800574817607:web:b0a9b9664ef9e9a13df862",
+        measurementId: "G-02NY8SGCTJ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
+</body>
+</html>

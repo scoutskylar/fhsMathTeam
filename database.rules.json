@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "attendance": {
+      ".read": false,
+      "$day": {
+        "$user": {
+          ".write": true,
+          ".validate": "!data.exists()"
+        }
+      }
+    }
+  }
+}

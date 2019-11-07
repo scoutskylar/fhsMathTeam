@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="..">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/ico" href="favicon-placeholder-v2.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/boxes.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Attendance - FHSMath</title>
+</head>
+<body>
+    <header>
+        <div class="header-title-wrapper noselect">
+            <a href="" class="header-title"><span>FHS</span>&#8203;<span>Math</span></a>
+        </div>
+        <div class="header-nav">
+            <div>
+                <div>
+                    <a href="">Home</a>
+                    <a href="attendance">Attendance</a>
+                    <a href="schedule">Schedule</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1 class="body-title">Attendance</h1>
+        <span class="error-box" id="error-box" style="display: none;">
+            The attendance form requires JavaScript. Please turn on JavaScript.
+            The internet must be pretty disappointing to you
+            if you have JavaScript disabled on a regular basis.
+        </span>
+        <span class="confirmed-box" id="confirmed-box" style="display: none;"></span>
+        <span class="info-box" id="info-box" style="display: none;"></span>
+        <div id="sign-in-wrapper" style="display: none; margin: 16px 0;">
+            <p>To submit attendance, you must connect your school accout.</p>
+            <input type="button" value="Connect School Account" onclick="signInWithMicrosoft()">
+        </div>
+        <form method="POST" action="javascript:void(0);" id="attendance-form" style="display: none">
+            <!-- <p>Enter your name and press "I'm here!" so we know you were here today!</p>
+            <p>
+                <label for="attendance-name">Name:</label>
+                <input type="text" placeholder="e.g. Leonhard Euler" name="attendance-name" id="attendance-name" required disabled autocomplete="name"
+                    onckeypress="if(e.keyCode==13)document.getElementById('attendance-submit').click()">
+            </p>
+            <p>
+                <input type="submit" value="I'm here!" id="attendance-submit">
+            </p> -->
+            <p>Press "I'm here!" so we know you were here today!</p>
+            <p style="display: none;">
+                <label for="attendance-name">Name:</label>
+                <input type="text" placeholder="e.g. Leonhard Euler" name="attendance-name" id="attendance-name" required disabled autocomplete="name"
+                    onckeypress="if(e.keyCode==13)document.getElementById('attendance-submit').click()">
+            </p>
+            <p>
+                <input type="submit" value="I'm here!" id="attendance-submit">
+            </p>
+        </form>
+        <hr>
+        <div>
+            <p>If you have problems, try resetting your account connection.</p>
+            <input type="button" value="Reset Account Connection" onclick="signOut()">
+        </div>
+    </main>
+    <noscript>
+        <style>
+        #attendance-form {
+            display: none !important;
+
+        }
+        #error-box {
+            display: inline-block !important;
+        }
+        </style>
+    </noscript>
+    <script>
+      {
+        let mathematicians =
+        "Daniel Bernoulli,René Descartes,Albert Einstein,Carl Gauss," +
+        "John Napier,Isaac Newton,Blaise Pascal,Srinivasa Ramanujan," +
+        "Bernhard Riemann,Alan Turing,Andrew Wiles";
+        mathematicians = mathematicians.split(',');
+        document.getElementById('attendance-name').setAttribute('placeholder',
+          "e.g. " + mathematicians[Math.floor(Math.random() * mathematicians.length)]);
+      }
+    </script>
+    
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js" onerror="console.log('Firebase core didn\'t load.')"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+
+    <!-- Attendance script -->
+    <script src="js/attendance.js"></script>
+</body>
+</html>
