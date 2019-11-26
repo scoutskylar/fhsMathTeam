@@ -3,11 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <base href="/">
-    <!-- <script>
-    //   if (window.location.pathname.indexOf('/public') === 0) {
-    //     document.getElementsByTagName('base')[0].href += 'public/';
-    //   }
-    </script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/ico" href="favicon-placeholder-v2.ico">
     <link rel="stylesheet" href="css/style.css">
@@ -26,6 +21,9 @@
                     <a href="">Home</a>
                     <a href="attendance">Attendance</a>
                     <a href="schedule">Schedule</a>
+                    <a href="events">Events</a>
+                    <a href="contact">Contact</a>
+                    <a href="about">About</a>
                 </div>
             </div>
         </div>
@@ -34,13 +32,28 @@
         <h1 class="body-title">404 &divide; sinc(0)</h1>
         <p>
             That page doesn't exist. Could I interest you in the <a href="">home</a> page?
-            There's <span id="404-pages-count">very few</span> pages on the entire site. 
+            There's <span id="404-pages-count">very few</span> pages on the entire site. How could you get lost?
         </p>
     </main>
+
+    <footer>
+        <div>
+            <div>
+                <div>
+                    <p>
+                        If there's something wrong with the <em>site itself</em> that you'd like to report,
+                        (e.g. a bug, a feature request, or feedback)
+                        don't hesitate to email the development team at
+                        <a href='mailto:skylardev@outlook.com?subject=FHS Math'>skylardev@outlook.com</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
     
     <script>
       try {
-        document.getElementById('404-pages-count').innerText = 'only ' + document.getElementsByClassName('header-nav')[0].children[0].children.length;
+        document.getElementById('404-pages-count').innerText = 'only ' + document.getElementsByClassName('header-nav')[0].children[0].children[0].children.length;
       } catch (err) {
         console.log('I couldn\'t figure out the number of pages. Someone must have changed something.');
       }
@@ -54,7 +67,6 @@
     <!-- Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
 
     <script>
     var firebaseConfig = {

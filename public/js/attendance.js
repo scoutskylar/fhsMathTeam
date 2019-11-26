@@ -17,16 +17,27 @@ firebase.analytics();
 
 
 // function that displays a message 
-function message(text, box = 'info') {
+function message(text, box) {
+  box = box || 'info';
   let errorBox = document.getElementById('error-box');
   let confirmedBox = document.getElementById('confirmed-box');
   let infoBox = document.getElementById('info-box');
-  message = (function(text, box = 'info') {
+  let hr = document.getElementById('attendance-bottom-hr');
+  message = (function(text, box) {
+    box = box || 'info';
     errorBox.style.display = 'none';
     confirmedBox.style.display = 'none';
     infoBox.style.display = 'none';
     if (text === undefined) {
+      let attendanceFormCheck = document.getElementById('attendance-form');
+      if (!attendanceFormCheck || attendanceFormCheck.style.display == 'none') {
+        hr.style.display = 'none';
+      } else {
+        hr.style.display = '';
+      }
       return;
+    } else {
+      hr.style.display = '';
     }
     if (box == 'error') {
       errorBox.innerHTML = text;
@@ -45,14 +56,14 @@ function message(text, box = 'info') {
 const attendanceForm = document.getElementById('attendance-form');
 
 if (attendanceForm) {
-  attendanceForm.addEventListener('submit', e => {
+  attendanceForm.addEventListener('submit', function(e) {
     attendanceForm.style.display = 'none';
     e.preventDefault();
     // attendanceSignIn(document.getElementById('attendance-name').value);
     attendanceSignIn();
     attendanceForm.parentElement.removeChild(attendanceForm);
     message('Sending...');
-    // console.info('Firebase Database sign-in has been sent!');
+    // console.info('Database sign-in has been sent!');
   })
 }
 
@@ -60,7 +71,10 @@ var user;
 firebase.auth().onAuthStateChanged(function(userFromAuth) {
   if (userFromAuth) {
     user = userFromAuth;
-    document.getElementById('attendance-name').value = user.displayName;
+    var name = user.displayName;
+    
+    // document.getElementById('attendance-name').value = user.displayName;
+    document.getElementById('attendance-name').innerText = user.displayName;
     attendanceForm.style.display = '';
     message();
   } else {
@@ -72,18 +86,9 @@ firebase.auth().onAuthStateChanged(function(userFromAuth) {
 message('Loading...');
 
 // firebase.auth().signInAnonymously().catch(function(error) {
-//   console.log('Firebase authentication failed. Error:', error);
+//   console.log('Authentication failed. Error:', error);
 //   message('Identification failed.', 'error');
 //   attendanceForm.parentElement.removeChild(attendanceForm);
-// });
-
-// Initialize the FirebaseUI Widget using Firebase.
-// var ui = new firebaseui.auth.AuthUI(firebase.auth());
-// ui.start('#firebaseui-auth-container', {
-//   signInOptions: [
-//     firebase.auth.EmailAuthProvider.PROVIDER_ID
-//   ],
-//   // Other config options...
 // });
 
 function signInWithMicrosoft() {
@@ -114,13 +119,35 @@ function signOut() {
     // message('The account connection has been reset successfully!', 'confirm');
   }).catch(function(error) {
     console.log('An error during signout. Error:', error);
-    message('An error occurred while trying to reset the account connection. ', 'error');
+    message('An error occurred while trying to reset the account connection.', 'error');
   });
 }
 
+var timeAdjust = null, serverDate;
 function attendanceSignIn() {
-  
-  firebase.database().ref('attendance/' + new Date().toDateString() + '/' + user.displayName).push(true)
+  if (timeAdjust === null) {
+    firebase.database().ref('/.info/serverTimeOffset')
+    .once('value')
+    .then(function stv(data) {
+      timeAdjust = data.val();
+      pushAttendance();
+    }, function (error) {
+      console.log('Time sync failed. Error:', error);
+      return error;
+    });
+  } else {
+    pushAttendance();
+  }
+}
+
+function pushAttendance() {
+  serverDate = new Date(Date.now() + timeAdjust);
+  let dateString = 
+    '(' + serverDate.getFullYear().toString() + '-' + // (YYYY-
+    ('0' + serverDate.getMonth()).slice(-2) + '-' +   // MM-
+    ('0' + serverDate.getDate()).slice(-2) + ') ' +   // DD)
+    serverDate.toDateString(); // e.g. Fri Nov 08 2019
+  firebase.database().ref('attendance/' + dateString + '/' + user.displayName).push(true)
   // .set(
   //   {
   //     // "date": (d => 
@@ -134,10 +161,10 @@ function attendanceSignIn() {
   //   }
   // )
   .then(function() {
-    // console.log('Firebase Database sign-in succeeded.');
+    // console.log('Database sign-in succeeded.');
     message('Attendance was submitted successfully!', 'confirm');
   }, function(error) {
-    console.log('Firebase Database push failed. Error:', error);
+    console.log('Database push failed. Error:', error);
     message('You are already marked as present.');
   });
 }
