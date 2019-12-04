@@ -21,7 +21,7 @@
                     <a href="">Home</a>
                     <a href="attendance">Attendance</a>
                     <a href="schedule">Schedule</a>
-                    <a href="events">Events</a>
+                    <!-- <a href="events">Events</a> -->
                     <a href="contact">Contact</a>
                     <a href="about">About</a>
                 </div>
@@ -51,14 +51,20 @@
             <p>
                 <input type="submit" value="I'm here!" id="attendance-submit">
             </p> -->
-            <p>Press the button below to sign in<span id="attendance-event-specifier" data-show="false"> to the <span id="attendance-event-type">meeting</span></span>!</p>
+            <p>
+                Press the button below to submit attencance<!--
+             --><span id="attendance-event-specifier" data-show="false">
+                    for the
+                    <span id="attendance-event-type">meeting or event</span><!--
+             --></span>!
+            </p>
             <!-- <label for="attendance-name">Name:</label> -->
             <!-- <input type="text" placeholder="e.g. Leonhard Euler" name="attendance-name" id="attendance-name" required disabled autocomplete="name"
                 onckeypress="if(e.keyCode==13)document.getElementById('attendance-submit').click()"> -->
-            <p>This is the name that will be sent to the attendance system:</p>
-            <p><span id="attendance-name">(error)</span></p>
+            <p>The following name will be sent to the attendance system:</p>
+            <p class="indent"><span id="attendance-name">(error)</span></p>
             <p>
-                <input type="submit" value="I'm here!" id="attendance-submit">
+                <input type="submit" value="Submit Attendance" id="attendance-submit">
             </p>
         </form>
         <hr id="attendance-bottom-hr">
@@ -121,6 +127,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
 
     <!-- Attendance script -->
-    <script src="js/attendance.js"></script>
+    <script src="attendance/attendance.js"></script>
 </body>
 </html>

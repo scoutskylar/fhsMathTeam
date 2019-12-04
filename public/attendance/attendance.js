@@ -1,5 +1,42 @@
 message('Initializing...');
 
+function setEventType(calendar) {
+  if (!calendar) return null;
+  const now = new Date(new Date().toDateString()).getTime() / 1000;
+  let eventTypes = [];
+  for (var event of calendar) {
+    if (now >= event.epoch && now - event.epoch < 86400 && event.type && eventTypes.indexOf(event.type) < 0) {
+      eventTypes.push(event.type);
+    }
+  }
+  if (eventTypes.length > 0) {
+    switch (eventTypes.length) {
+      case 0:
+        document.getElementById('attendance-event-type').innerText = 'event';
+      case 1:
+        document.getElementById('attendance-event-type').innerText = eventTypes[0];
+        break;
+      case 2:
+        document.getElementById('attendance-event-type').innerText = eventTypes[0] + ' or ' + eventTypes[1];
+        break;
+      default:
+        eventTypes[eventTypes.length - 1] = 'or ' + eventTypes[eventTypes.length - 1];
+        document.getElementById('attendance-event-type').innerText = eventTypes.join(', ');
+        break;
+    }
+    document.getElementById('attendance-event-specifier').setAttribute('data-show', 'true');
+  }
+}
+
+{
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    setEventType(JSON.parse(this.responseText));
+  };
+  xhr.open('GET', 'js/events.json');
+  xhr.send();
+}
+
 var firebaseConfig = {
   apiKey: "AIzaSyA_9ZR6kJBOvdipEswlp0JC-wzw5slo9HI",
   authDomain: "fhsmath.firebaseapp.com",
