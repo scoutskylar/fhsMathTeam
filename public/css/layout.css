@@ -90,9 +90,9 @@ main {
   width: 820px;
   max-width: 100%;
   border-left: 4px solid;
-  /* transition-property: border-color, padding-left, padding-right; */ /* CLEARED */
-  /* transition-duration: 0.2s; */
-  /* transition-timing-function: ease; */
+  transition-property: border-color, padding-left, padding-right; /* CLEARED */
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
 }
 
 @media screen and (max-width: 1024px) {
@@ -158,16 +158,17 @@ h1.body-title {
   border-bottom: 2px solid;
 }
 
-.schedule-table {
+.banded-table {
   border-collapse: collapse;
   text-align: left;
+  width: 100%;
 }
 
-.schedule-table th {
+.banded-table th {
   border-bottom: 2px solid;
 }
 
-.schedule-table th, .schedule-table td {
+.banded-table th, .banded-table td {
   padding: 8px 12px;
 }
 
@@ -205,13 +206,13 @@ input:disabled {
 /* a[href^="http"]::after, */
 a[target]:not([target="_self"]):not([target=""])::after {
   /* External link */
-  content: " \1f5d7";
+  content: "\a0\1f5d7";
   text-decoration: none;
 }
 
 a[href^="mailto:"]::after {
   /* Email link */
-  content: " \2709";
+  content: "\a0\2709";
   text-decoration: none;
 }
 
@@ -276,7 +277,7 @@ a[href^="mailto:"]::after {
   margin-top: -0.7em;
 }
 
-.schedule-table-image-source {
+.banded-table-image-source {
   opacity: 0.7;
   font-weight: bold;
   font-style: italic;
@@ -284,7 +285,7 @@ a[href^="mailto:"]::after {
   margin-bottom: 0;
 }
 
-.schedule-table-image-source a {
+.banded-table-image-source a {
   opacity: 1;
   font-weight: normal;
   font-style: normal;

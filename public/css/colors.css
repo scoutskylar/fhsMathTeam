@@ -62,12 +62,12 @@ h1.body-title {
   border-bottom-color: var(--box-color, silver);
 }
 
-.schedule-table th {
+.banded-table th {
   border-bottom-color: black;
   border-color: var(--text-color, black);
 }
 
-.schedule-table tbody tr:nth-last-child(odd) {
+.banded-table tbody tr:nth-last-child(odd) {
   background-color: silver;
   background-color: var(--box-color, silver);
 }
