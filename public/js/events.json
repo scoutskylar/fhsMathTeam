@@ -16,14 +16,14 @@
   {
     "title": "Example Event 1",
     "type": "lorem",
-    "dateString": "Suessday, Dec. 5",
+    "dateString": "Seussday, Dec. 5",
     "epoch": 1575504000,
     "location": "TODO"
   },
   {
     "title": "Example Event 2",
     "type": "ipsum",
-    "dateString": "Suessday, Dec. 5",
+    "dateString": "Seussday, Dec. 5",
     "epoch": 1575504000,
     "location": "TODO"
   },
