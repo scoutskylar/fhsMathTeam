@@ -1,3 +1,7 @@
+:root {
+  --font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
 html {
   overflow-y: scroll;
 }
@@ -5,16 +9,11 @@ html {
 body {
   margin: 0;
   
-  background-color: white;
-  color: black;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  
-  background-color: var(--main-color, white);
-  color: var(--text-color, black);
   font-family: var(--font-family, Arial), Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-/* START flexbox */
+/* START flexbox (test) */
 
 /* html {
   height: 100%;
@@ -47,8 +46,7 @@ body {
 /* END overflow */
 
 hr {
-  border: 1px solid silver;
-  border: 1px solid var(--box-color, silver);
+  border: 1px solid;
 }
 
 header {
@@ -72,46 +70,36 @@ header {
   margin: 0 -16px;
   padding: 0 16px;
   border-radius: 8px;
-  background-color: rgb(182, 0, 0);
-  background-color: var(--accent-color, rgb(182, 0, 0));
-  color: white;
-  color: var(--main-color, white);
+  background-color: black; /* CLEARED */
+  color: white; /* CLEARED */
 }
 
 .header-nav > div > div > * {
   display: inline-block;
-  color: inherit;
-  font-weight: bold;
-  font-size: 1rem;
+  color: inherit; /* CLEARED */
   text-decoration: none;
   padding: 8px;
-}
-
-.header-nav > div > div > *:hover {
-  background-color: hsla(0, 0%, 100%, 0.2);
-  background-color: var(--nav-link-hover-color, hsla(0, 0%, 100%, 0.2));
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 main {
   box-sizing: border-box;
   margin: 0 auto;
-  border-left: 4px solid hsla(0, 0%, 50%, 0.2);
-  border-left-color: var(--dim-color, hsla(0, 0%, 50%, 0.2));
   padding: 1.5rem 20px 1.5rem 16px;
   width: 820px;
   max-width: 100%;
-  background: white;
-  background: var(--main-color, white);
-  /* transition-property: border-color, padding-left, padding-right;
-  transition-duration: 0.2s;
-  transition-timing-function: ease; */
+  border-left: 4px solid;
+  /* transition-property: border-color, padding-left, padding-right; */ /* CLEARED */
+  /* transition-duration: 0.2s; */
+  /* transition-timing-function: ease; */
 }
 
 @media screen and (max-width: 1024px) {
   main {
     padding-right: 8px;
     padding-left: 4px;
-    border-color: transparent;
+    border-color: transparent; /* CLEARED */
     /* max-width: 796px; */
   }
 }
@@ -133,17 +121,11 @@ footer > div > div {
 }
 
 footer > div > div > div {
+  border-top: 4px solid;
   margin: 0 -16px -8px -16px;
   padding: 0 16px 8px 16px;
   border-radius: 8px;
   overflow: hidden;
-  border-top: 4px solid silver;
-  border-color: var(--box-color, silver);
-  background-color: hsla(0, 0%, 50%, 0.2);
-  background-color: var(--dim-color, hsla(0, 0%, 50%, 0.2));
-  /* background: linear-gradient(hsla(0, 0%, 50%, 0.2), hsla(0, 0%, 50%, 0.2) calc(100% - 16px), transparent); */
-  color: black;
-  color: var(--text-color, black);
 }
 
 .header-title-wrapper {
@@ -154,8 +136,8 @@ footer > div > div > div {
 
 .header-title {
   text-decoration: none;
-  color: inherit;
   display: block;
+  color: inherit; /* CLEARED */
   cursor: pointer;
   font-size: 3rem;
   /* margin: 0 auto 0 calc((100% - 780px) / 2 - 35px); */
@@ -171,20 +153,9 @@ footer > div > div > div {
   /* text-shadow: 0 0 2px white; */
 }
 
-/* .header-title > span:nth-child(1) { */
-.header-title > span:first-child {
-  color: rgb(182, 0, 0);
-}
-
-/* .header-title > span:nth-child(2) { */
-.header-title > span:nth-child(2) {
-  color: rgb(149, 149, 149);
-}
-
 h1.body-title {
   margin: 0.5rem 0;
-  border-bottom: 2px solid silver;
-  border-bottom: 2px solid var(--box-color, silver);
+  border-bottom: 2px solid;
 }
 
 .schedule-table {
@@ -193,13 +164,7 @@ h1.body-title {
 }
 
 .schedule-table th {
-  border-bottom: 2px solid black;
-  border-color: var(--text-color, black);
-}
-
-.schedule-table tbody tr:nth-last-child(odd) {
-  background-color: silver;
-  background-color: var(--box-color, silver);
+  border-bottom: 2px solid;
 }
 
 .schedule-table th, .schedule-table td {
@@ -209,10 +174,8 @@ h1.body-title {
 .schedule-event-picture {
   max-width: 300px;
   display: block;
-  border: 2px solid black;
-  border-color: var(--text-color, black);
+  border: 2px solid;
   border-radius: 4px;
-  background-color: hsl(0, 0%, 30%);
 }
 
 img.schedule-event-picture.picture-padding {
@@ -224,40 +187,30 @@ img.picture-padding {
 }
 
 input {
-  border: 2px solid black;
-  border-color: var(--text-color, black);
-  background-color: white;
-  background-color: var(--main-color, white);
-  color: black;
-  color: var(--text-color, black);
+  border: 2px solid;
   padding: 1px 6px;
 }
 
 input.large-button {
   font-weight: bold;
   font-size: 1rem;
-  background-color: rgb(182, 0, 0);
-  background-color: var(--accent-color, rgb(182, 0, 0));
   border-width: 0;
-  color: white;
-  color: var(--main-color, white);
   padding: 8px 12px;
 }
 
 input:disabled {
-  color: rgb(84, 84, 84);
   cursor: default;
-  background-color: rgb(235, 235, 228);
 }
 
 /* a[href^="http"]::after, */
-a[target]:not([target="_self"]):not([target=""])::after
-{
+a[target]:not([target="_self"]):not([target=""])::after {
+  /* External link */
   content: " \1f5d7";
   text-decoration: none;
 }
 
 a[href^="mailto:"]::after {
+  /* Email link */
   content: " \2709";
   text-decoration: none;
 }
@@ -276,8 +229,6 @@ a[href^="mailto:"]::after {
   align-items: center;
   flex-direction: row;
   font-weight: bold;
-  background-color: silver;
-  background-color: var(--box-color, silver);
   border-radius: 1.25rem 0.5rem;
   padding: 1rem 0;
   min-height: 5rem;
@@ -325,10 +276,6 @@ a[href^="mailto:"]::after {
   margin-top: -0.7em;
 }
 
-/* .white-img-background {
-  background: white;
-}
-
 .schedule-table-image-source {
   opacity: 0.7;
   font-weight: bold;
@@ -341,12 +288,10 @@ a[href^="mailto:"]::after {
   opacity: 1;
   font-weight: normal;
   font-style: normal;
-} */
+}
 
 .embed {
   border: 2px solid;
-  background-color: silver;
-  background-color: var(--box-color, silver);
   display: block;
   margin: 1em 0;
 }
@@ -356,8 +301,6 @@ a[href^="mailto:"]::after {
 }
 
 #attendance-name {
-  background-color: hsla(0, 0%, 50%, 0.2);
-  background-color: var(--dim-color, hsla(0, 0%, 50%, 0.2));
   padding: 8px;
   border-radius: 8px;
 }

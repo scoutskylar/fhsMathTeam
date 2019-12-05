@@ -1,0 +1,119 @@
+:root {
+  --main-color: white;
+  --nav-link-hover-color: hsla(0, 0%, 0%, 0.2);
+  --text-color: black;
+  --dim-color: rgba(127, 127, 127, 0.2);
+  --accent-color: rgb(182, 0, 0);
+  --box-color: silver;
+}
+
+body {
+  background-color: white;
+  color: black;
+  
+  background-color: var(--main-color, white);
+  color: var(--text-color, black);
+}
+
+hr {
+  border-color: silver;
+  border-color: var(--box-color, silver);
+}
+
+.header-nav > div > div {
+  background-color: rgb(182, 0, 0);
+  background-color: var(--accent-color, rgb(182, 0, 0));
+  color: white;
+  color: var(--main-color, white);
+}
+
+.header-nav > div > div > *:hover {
+  background-color: hsla(0, 0%, 100%, 0.2);
+  background-color: var(--nav-link-hover-color, hsla(0, 0%, 100%, 0.2));
+}
+
+main {
+  border-left-color: hsla(0, 0%, 50%, 0.2);
+  border-left-color: var(--dim-color, hsla(0, 0%, 50%, 0.2));
+}
+
+footer > div > div > div {
+  border-top-color: silver;
+  border-color: var(--box-color, silver);
+  background-color: hsla(0, 0%, 50%, 0.2);
+  background-color: var(--dim-color, hsla(0, 0%, 50%, 0.2));
+  /* background: linear-gradient(hsla(0, 0%, 50%, 0.2), hsla(0, 0%, 50%, 0.2) calc(100% - 16px), transparent); */ /* CLEARED */
+  color: black;
+  color: var(--text-color, black);
+}
+
+/* .header-title > span:nth-child(2) { */
+.header-title {
+  color: rgb(149, 149, 149);
+}
+
+/* .header-title > span:nth-child(1) { */
+.header-title > span:first-child {
+  color: rgb(182, 0, 0);
+}
+  
+h1.body-title {
+  border-bottom-color: silver;
+  border-bottom-color: var(--box-color, silver);
+}
+
+.schedule-table th {
+  border-bottom-color: black;
+  border-color: var(--text-color, black);
+}
+
+.schedule-table tbody tr:nth-last-child(odd) {
+  background-color: silver;
+  background-color: var(--box-color, silver);
+}
+
+.schedule-event-picture {
+  border-color: black;
+  border-color: var(--text-color, black);
+  background-color: hsl(0, 0%, 30%);
+}
+
+input {
+  border-color: black;
+  border-color: var(--text-color, black);
+  background-color: white;
+  background-color: var(--main-color, white);
+  color: black;
+  color: var(--text-color, black);
+}
+
+input.large-button {
+  background-color: rgb(182, 0, 0);
+  background-color: var(--accent-color, rgb(182, 0, 0));
+  color: white;
+  color: var(--main-color, white);
+}
+
+input:disabled {
+  color: rgb(84, 84, 84);
+  background-color: rgb(235, 235, 228);
+}
+
+.quote {
+  background-color: silver;
+  background-color: var(--box-color, silver);
+}
+
+/* .white-img-background {
+  background-color: white;
+} */
+
+.embed {
+  background-color: silver;
+  background-color: var(--box-color, silver);
+}
+
+#attendance-name {
+  background-color: hsla(0, 0%, 50%, 0.2);
+  background-color: var(--dim-color, hsla(0, 0%, 50%, 0.2));
+}
