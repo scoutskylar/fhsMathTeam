@@ -1,13 +1,3 @@
-:root {
-  --main-color: white;
-  --nav-link-hover-color: hsla(0, 0%, 0%, 0.2);
-  --text-color: black;
-  --dim-color: rgba(127, 127, 127, 0.2);
-  --accent-color: rgb(182, 0, 0);
-  --box-color: silver;
-  --font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-
 html {
   overflow-y: scroll;
 }
