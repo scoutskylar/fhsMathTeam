@@ -9,9 +9,9 @@
 
 body {
   background-color: white;
-  color: black;
-  
   background-color: var(--main-color, white);
+  
+  color: black;
   color: var(--text-color, black);
 }
 
@@ -55,6 +55,11 @@ footer > div > div > div {
 /* .header-title > span:nth-child(1) { */
 .header-title > span:first-child {
   color: rgb(182, 0, 0);
+}
+
+#dev-status {
+  color: black;
+  color: var(--text-color, black);
 }
   
 h1.body-title {

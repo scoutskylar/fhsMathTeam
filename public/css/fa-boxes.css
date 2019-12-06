@@ -1,0 +1,85 @@
+/* BOX FORMATTING */
+.warning-box,
+.error-box,
+.confirmed-box,
+.info-box
+{
+  display: inline-block;
+  color: black;
+  border: 2px solid;
+  padding: 0.375rem;
+  padding-top: 0.725rem;
+  border-radius: 4px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+
+/* ICON FORMATTING (Font Awesome) */
+.warning-box::before,
+.error-box::before,
+.confirmed-box::before,
+.info-box::before
+{
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+
+  font-family: 'Font Awesome';
+  font-weight: 900;
+
+  margin-right: 0.5rem;
+  margin-top: -0.3rem;
+  float: left;
+  font-size: 1.5rem;
+}
+
+
+/* ICONS */
+
+.warning-box::before,
+.error-box::before {
+  /* exclamation-circle */
+  content: "\f06a";
+}
+
+.confirmed-box::before {
+  /* check-circle */
+  content: "\f058";
+}
+
+.info-box::before {
+  /* info-circle */
+  content: "\f05a";
+}
+
+
+/* BOX COLORS */
+
+.warning-box {
+  background-color: yellow;
+  border-color: rgb(153, 153, 0);
+}
+
+.warning-box a {
+  color: blue;
+}
+
+.error-box {
+  background-color: rgb(255, 204, 204);
+  border-color: red;
+}
+
+.confirmed-box {
+  background-color: palegreen;
+  border-color: green;
+}
+
+.info-box {
+  background-color: rgb(216, 216, 216);
+  border-color: black;
+}
