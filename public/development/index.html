@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <base href="/">
+    <base href="..">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/ico" href="favicon-placeholder-v3.ico">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fontawesome.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>404 - FHSMath</title>
+    <title>Development - FHSMath</title>
 </head>
 <body>
     <header>
@@ -24,11 +24,50 @@
     </div>
 
     <main>
-        <h1 class="body-title">404 &divide; sinc(0)</h1>
+        <h1 class="body-title">Development</h1>
         <p>
-            That page doesn't exist. Could I interest you in the <a href="">home</a> page?
-            There's <span id="404-pages-count">very few</span> pages on the entire site. How could you get lost?
+            If there's something about the <em>site itself</em>
+            that you need help with or would like to report,
+            (e.g. a bug, a feature request, or feedback)
+            please read through this page and
+            if you don't find what you're looking for,
+            don't hesitate to email the development team at
+            <a href='mailto:skylardev@outlook.com?subject=FHS Math'>skylardev@outlook.com</a>.
         </p>
+        <h3 class="has-subtext">Known Bugs</h3>
+        <p class="subtext has-subtext">
+            We already know about these and are working on fixing them.
+        </p>
+        <ul class="subtext">
+            <li>
+                (none yet)
+            </li>
+        </ul>
+        <h3 class="has-subtext">Feature Requests</h3>
+        <p class="subtext has-subtext">
+            We are considering the addition of these features.
+        </p>
+        <ul class="subtext">
+            <li>
+                Service hours form
+            </li>
+            <li>
+                [Admin] UI to enter events without JSON
+            </li>
+            <li>
+                [Admin] page to view attendance
+            </li>
+        </ul>
+        <h3 class="has-subtext">FAQ</h3>
+        <p class="subtext has-subtext">
+            If you need help with something on the site,
+            try finding an answer here before contacting us.
+        </p>
+        <ul class="subtext">
+            <li>
+                (none yet)
+            </li>
+        </ul>
     </main>
 
     <footer>
@@ -41,14 +80,6 @@
         </p>
     </footer>
     
-    <script>
-      try {
-        document.getElementById('404-pages-count').innerText = 'only ' + document.getElementsByClassName('header-nav')[0].children[0].children[0].children.length;
-      } catch (err) {
-        console.log('I couldn\'t figure out the number of pages. Someone must have changed something.');
-      }
-    </script>
-
     <!-- FIREBASE -->
     
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -57,7 +88,7 @@
     <!-- Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
-
+    
     <script>
     var firebaseConfig = {
         apiKey: "AIzaSyA_9ZR6kJBOvdipEswlp0JC-wzw5slo9HI",

@@ -1,0 +1,48 @@
+more color+
+more interactivity ++
+more "dynamic features"
+[+]more content +
+more content on...
+  Home +++
+  About
+
+good content on...
+  Home
+  Contact
+
+good consistency
+good navigation ++
+good interactivity
+good colors +
+
+event page is hidden +
+
+boring ++
+boring style / not eye-catching +++
+
+attendance is a good feature and is useful +
+attendance doesn't work
+
+like the email icon
+like the banded rows on table
+
+there's a lot of empty space +++
+what is the purpose
+change the font on each page
+professional style/layout +
+[+]add pictures ++
+simple & clean +
+[TODO] add bottom border on footer
+add a footer
+hover effect in nav bar for mobile
+(DONE) `cursor` cursor and hover effect for all buttons
+[+TODO] move about to home
+plagiarized fhsched logo
+plagiarized fhsched in general
+put a space between fhs and math
+
+-------------FROM-SPONSORS-------------
+
+service hour form
+enter events with NOT json
+make page to view attendance

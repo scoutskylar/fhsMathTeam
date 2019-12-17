@@ -4,76 +4,77 @@
 
 html {
   overflow-y: scroll;
-  overflow-x: hidden;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  min-height: 100%;
-  max-width: 100vw;
+}
+
+body {
   margin: 0;
-  box-sizing: border-box;
+  
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: var(--font-family, Arial), Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* START flexbox (test) */
+
+/* html {
+  height: 100%;
 }
 
 body {
   display: flex;
   flex-flow: column nowrap;
-  box-sizing: border-box;
-  
-  overflow-y: auto;
-  overflow-x: hidden;
-  /* overflow-x: hidden; */
-  width: 872px;
-  min-width: 70%;
-  /* max-width: 100%; */
-  flex: 0 1 auto;
-
-  margin: 0;
-  padding: 0;
-
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-family: var(--font-family, Arial), Arial, "Helvetica Neue", Helvetica, sans-serif;
+  min-height: 100%;
 }
 
-body > * {
-  width: 100%;
-  box-sizing: border-box;
+header, footer {
   flex: none;
 }
 
-header, main {
-  border-left: 4px solid;
-  border-right: 4px solid;
+main {
+  flex: 1 0 auto;
+} */
+
+/* END flexbox */
+
+/* START overflow */
+
+body {
+  margin-bottom: -8px;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* END overflow */
+
+hr {
+  border: 1px solid;
 }
 
 header {
   margin: 0;
-  padding: 0 16px;
-}
-
-.header-title {
-  text-decoration: none;
-  display: inline-block;
-  color: inherit; /* CLEARED */
-  cursor: pointer;
-  font-size: 3rem;
-  padding: 0.7em 1rem 0.4em 1rem;
-  line-height: 0.7em;
-  margin: 0 1.5rem 0 0;
-  box-sizing: border-box;
-  /* max-width: 100%; */
-  font-family: Cambria, serif;
-  font-weight: bold;
 }
 
 .header-nav {
   margin: 0;
-  padding: 0 12px;
+  padding: 0 8px;
+  font-size: 0;
   overflow: hidden;
+}
+
+.header-nav > div {
+  margin: 0 auto;
+  width: 840px;
+  max-width: 100%;
+}
+
+.header-nav > div > div {
+  margin: 0 -16px;
+  padding: 0 16px;
+  border-radius: 8px 8px 0 0;
   background-color: black; /* CLEARED */
   color: white; /* CLEARED */
 }
 
-.header-nav > * {
+.header-nav > div > div > * {
   display: inline-block;
   color: inherit; /* CLEARED */
   text-decoration: none;
@@ -83,42 +84,101 @@ header {
 }
 
 main {
-  flex: 1 0 auto;
-  margin: 0;
+  margin: 0 auto;
+  width: auto;
+  max-width: 832px;
+  border-left: 4px solid;
+  border-right: 4px solid;
+  /* transition-property: border-color; *//* CLEARED */
+  /* transition-duration: 0.5s;
+  transition-timing-function: ease; */
   overflow-x: visible;
   overflow-y: auto;
-  padding: 0 16px;
+  padding: 1rem 16px;
 }
 
 main:last-child {
   margin-bottom: 1rem;
 }
 
-footer {
-  margin: 0;
-  margin-bottom: 16px;
-  padding: 0 16px;
-  font-size: 80%;
-  font-weight: bold;
+/* main > div {
+  margin: 1.5rem 12px;
+} */
+
+@media screen and (max-width: 889px) {
+  main {
+    padding-left: 4px;
+    padding-right: 4px;
+    /* changes color through color.css
+     * because this is loaded before colors.css,
+     * so it will be overridden.
+     */
+    /* max-width: 804px; */
+  }
+  /* main > div {
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  } */
 }
 
-@media all and (max-width: 1280px) {
-  /* transitions in transitions.css */
-  body {
-    width: 100%;
-  }
-  header, main {
-    border: none;
-  }
+footer {
+  margin: 0;
+}
+
+footer > div {
+  margin: 0;
+  padding: 0 8px;
+  overflow: visible;
+}
+
+footer > div > div {
+  margin: 0 auto;
+  width: 840px;
+  max-width: 100%;
+}
+
+footer > div > div > div {
+  border-top: 4px solid;
+  /* border-bottom: 4px solid; */
+  /* margin: 0 -16px -8px -16px;
+  padding: 0 16px 8px 16px; */
+  margin: 0 -16px;
+  padding: 0 16px;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+.header-title-wrapper {
+  margin: 0 auto;
+  width: 840px;
+  max-width: 100%;
+}
+
+.header-title {
+  text-decoration: none;
+  display: block;
+  color: inherit; /* CLEARED */
+  cursor: pointer;
+  font-size: 3rem;
+  /* margin: 0 auto 0 calc((100% - 780px) / 2 - 35px); */
+  /* padding: 0.2em 0.2em 0em 0.2em; */
+  padding: 0.4em 0.2em 0.4em 0.2em;
+  line-height: 0.7em;
+  margin: 1.5rem 1.5rem 0 0;
+  width: fit-content;
+  box-sizing: border-box;
+  /* max-width: 100%; */
+  font-family: Cambria, serif;
+  font-weight: bold;
+  /* text-shadow: 0 0 2px white; */
 }
 
 h1.body-title {
-  margin-top: 1.3rem;
+  /* margin: 0.5rem 0; */
+  margin-top: 0.17rem;
   border-bottom: 2px solid;
-}
-
-hr {
-  border: 1px solid;
 }
 
 .banded-table {
@@ -252,7 +312,7 @@ a[href^="mailto:"]::after {
   margin: 1rem 0;
 }
 
-@media all and (max-width: 300px) {
+@media only screen and (max-width: 300px) {
   .quote {
     flex-direction: column;
     padding-left: 8px;
@@ -320,12 +380,4 @@ a[href^="mailto:"]::after {
 
 #attendance-event-specifier[data-show="false"] {
   display: none;
-}
-
-.has-subtext {
-  margin-bottom: 0.3em;
-}
-
-.subtext {
-  margin-top: 0.3em;
 }

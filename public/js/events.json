@@ -14,20 +14,6 @@
     "location": "TODO"
   },
   {
-    "title": "Example Event 1",
-    "type": "lorem",
-    "dateString": "Seussday, Dec. 6",
-    "epoch": 1575504000,
-    "location": "TODO"
-  },
-  {
-    "title": "Example Event 2",
-    "type": "ipsum",
-    "dateString": "Seussday, Dec. 6",
-    "epoch": 1575504000,
-    "location": "TODO"
-  },
-  {
     "title": "IML #3",
     "type": "IML",
     "dateString": "Tuesday, Dec. 10",

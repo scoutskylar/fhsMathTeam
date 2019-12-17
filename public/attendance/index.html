@@ -6,27 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/ico" href="favicon-placeholder-v3.ico">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Attendance - FHSMath</title>
 </head>
 <body>
     <header>
-        <div class="header-title-wrapper noselect">
-            <a href="" class="header-title"><span>FHS</span>&#8203;<span>Math</span></a>
-        </div>
-        <div class="header-nav">
-            <div>
-                <div>
-                    <a href="">Home</a>
-                    <a href="attendance">Attendance</a>
-                    <a href="schedule">Schedule</a>
-                    <!-- <a href="events">Events</a> -->
-                    <a href="contact">Contact</a>
-                    <a href="about">About</a>
-                </div>
-            </div>
-        </div>
+        <a href="" class="header-title"><span>FHS</span>&#8203;<span>Math</span></a>
     </header>
+
+    <div class="header-nav">
+        <a href="">Home</a>
+        <a href="attendance">Attendance</a>
+        <a href="schedule">Schedule</a>
+        <!-- <a href="events">Events</a> -->
+        <a href="contact">Contact</a>
+    </div>
+
     <main>
         <h1 class="body-title">Attendance</h1>
         <span class="error-box" id="error-box" style="display: none;">
@@ -69,23 +65,18 @@
         <hr id="attendance-bottom-hr">
         <div>
             <p>If you have problems, try resetting your account connection.</p>
-            <input type="button" value="Reset Account Connection" onclick="signOut()">
+            <input type="button" class="normal-button" value="Reset Account Connection" onclick="signOut()">
         </div>
     </main>
 
     <footer>
-        <div>
-            <div>
-                <div>
-                    <p>
-                        If there's something wrong with the <em>site itself</em> that you'd like to report,
-                        (e.g. a bug, a feature request, or feedback)
-                        don't hesitate to email the development team at
-                        <a href='mailto:skylardev@outlook.com?subject=FHS Math'>skylardev@outlook.com</a>.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <p>
+            &copy; 2019 Skylar Smith, Natania Dominianni, and Logan Kincanon.
+        </p>
+        <p>
+            <a href="development">Development Contact</a>&emsp;
+            <a href="contact">Sponsor Contact</a>
+        </p>
     </footer>
 
     <noscript>

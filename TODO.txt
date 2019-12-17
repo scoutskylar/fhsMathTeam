@@ -1,4 +1,3 @@
-  - Make warning sign ("!" in triangle) a picture
   - Make a logo
       - change icon on all HTML pages
       - add to [Microsoft Azure]
