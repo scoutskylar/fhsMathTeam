@@ -4,5 +4,5 @@
 Take a look at [the website][fhsmath] if you want to learn about the FHS Math Team.
 
   <!-- [fhsmath]: https://fhsmath.com -->
-  [fhsmath]: https://scoutskylar.github.io/fhsmath
+  [fhsmath]: https://fhsmath.firebaseapp.com/
   [fhs]: https://fhs.hseschools.org
