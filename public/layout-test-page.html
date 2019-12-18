@@ -2,26 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <base href=".">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/ico" href="favicon-placeholder-v3.ico">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fontawesome.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home - FHSMath</title>
+    <title>Layout Test Page - FHSMath</title>
 </head>
 <body>
     <header>
         <a href="" class="header-title"><span>FHS</span>&#8203;<span>Math</span></a>
     </header>
 
-    <div class="header-nav">
+    <nav>
         <a href="">Home</a>
         <a href="attendance">Attendance</a>
         <a href="schedule">Schedule</a>
         <!-- <a href="events">Events</a> -->
         <a href="contact">Contact</a>
-    </div>
+    </nav>
 
     <main>
         <h1 class="body-title">Layout Test Page</h1>
@@ -35,8 +34,11 @@
             then sometimes followed by baz. These three words are generally
             used for testing things that only require a few strings.
         </p>
-        <p>
-            This page doesn't have the best content, but
+        <span class="info-box">
+            Layout is important.
+            This page doesn't have the best content, but it sure is
+            useful for testing layouts. That's why the page has the
+            title that it has. I've always wondered why
             lorem ipsum dolor sit amet consectetur adipisicing elit.
             Quod ex dolor magnam tenetur corporis quia est libero.
             Quisquam dolor in aut expedita eligendi et magnam mollitia
@@ -44,21 +46,25 @@
             voluptatum autem laudantium, sunt aspernatur dolore adiure
             vel omnis impedit!
             I don't like to spend too much time on unimportant things.
-        </p>
+        </span>
         <blockquote class="quote">
             <div>
-                01001001 00100000 01101100 01101111 01110110 01100101 00100000 01100010 01101001 01101110 01100001 01110010 01111001.
+                <code>
+                    01001001 00100000 01101100 01101111 01110110 01100101 00100000
+                    <br>
+                    01100010 01101001 01101110 01100001 01110010 01111001<!--
+             --></code>.
                 <br>
                 <span style="font-style: italic;" class="indent">~Skylar of Fishers</span>
             </div>
         </blockquote>
-        <p style="margin-bottom: 0">The developers of this site are</p>
-        <ul style="margin-top: 0">
+        <p class="has-subtext">The developers of this site are</p>
+        <ul class="subtext">
             <li>Skylar Smith</li>
             <li>Natania Dominianni</li>
             <li>Logan Kincanon</li>
         </ul>
-        <p>If you have an issue with the site, <a href="development">contact the developers</a>.</p>
+        <p>If you there's a problem with the site, feel free to <a href="development">contact the development team</a>.</p>
     </main>
 
     <footer>
@@ -66,10 +72,12 @@
             &copy; 2019 Skylar Smith, Natania Dominianni, and Logan Kincanon.
         </p>
         <p>
-            <a href="development">Development Contact</a>&emsp;
+            <a href="development">FAQ &amp; Development</a>&emsp;
             <a href="contact">Sponsor Contact</a>
         </p>
     </footer>
+    
+    <span id="bottom"></span>
     
     <!-- FIREBASE -->
     

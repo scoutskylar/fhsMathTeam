@@ -38,6 +38,6 @@ function makeTable(tableId, calendar) {
   xhr.onload = function() {
     makeTable('schedule-table', JSON.parse(this.responseText));
   };
-  xhr.open('GET', 'js/events.json');
+  xhr.open('GET', '../js/events.json');
   xhr.send();
 }

@@ -53,7 +53,6 @@ header {
 .header-title {
   text-decoration: none;
   display: inline-block;
-  color: inherit; /* CLEARED */
   cursor: pointer;
   font-size: 3rem;
   padding: 0.7em 1rem 0.4em 1rem;
@@ -65,17 +64,14 @@ header {
   font-weight: bold;
 }
 
-.header-nav {
+body > nav {
   margin: 0;
   padding: 0 12px;
   overflow: hidden;
-  background-color: black; /* CLEARED */
-  color: white; /* CLEARED */
 }
 
-.header-nav > * {
+body > nav > * {
   display: inline-block;
-  color: inherit; /* CLEARED */
   text-decoration: none;
   padding: 8px;
   font-size: 1rem;
@@ -157,10 +153,6 @@ input {
 
 input[type="button"], input[type="submit"] {
   cursor: pointer;
-}
-
-input[type="button"].normal-button:hover, input[type="submit"].normal-button:hover {
-  background-color: hsla(0, 0%, 0%, 0.2); /* CLEARED */
 }
 
 input.large-button {

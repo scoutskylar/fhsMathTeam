@@ -2,7 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <base href="/">
+    <script>
+    try {
+        let base = (document.createElement('base'));
+        if (location.pathname.indexOf('/public') == 0) {
+            base.setAttribute('href', '/public/');
+        } else {
+            base.setAttribute('href', '/');
+        }
+        // document.head.removeChild(document.getElementsByTagName('base')[0]);
+        document.head.appendChild(base);
+    } catch (e) {
+        console.error('Error in synchronous base element creation.');
+    }
+    </script>
+    <noscript>
+        <base href="/">
+    </noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/ico" href="favicon-placeholder-v3.ico">
     <link rel="stylesheet" href="css/style.css">
@@ -15,19 +31,19 @@
         <a href="" class="header-title"><span>FHS</span>&#8203;<span>Math</span></a>
     </header>
 
-    <div class="header-nav">
+    <nav>
         <a href="">Home</a>
         <a href="attendance">Attendance</a>
         <a href="schedule">Schedule</a>
         <!-- <a href="events">Events</a> -->
         <a href="contact">Contact</a>
-    </div>
+    </nav>
 
     <main>
         <h1 class="body-title">404 &divide; sinc(0)</h1>
         <p>
             That page doesn't exist. Could I interest you in the <a href="">home</a> page?
-            There's <span id="404-pages-count">very few</span> pages on the entire site. How could you get lost?
+            <!-- There's <span id="404-pages-count">very few</span> pages on the site. How could you get lost? -->
         </p>
     </main>
 
@@ -36,18 +52,20 @@
             &copy; 2019 Skylar Smith, Natania Dominianni, and Logan Kincanon.
         </p>
         <p>
-            <a href="development">Development Contact</a>&emsp;
+            <a href="development">FAQ &amp; Development</a>&emsp;
             <a href="contact">Sponsor Contact</a>
         </p>
     </footer>
     
-    <script>
-      try {
-        document.getElementById('404-pages-count').innerText = 'only ' + document.getElementsByClassName('header-nav')[0].children[0].children[0].children.length;
-      } catch (err) {
-        console.log('I couldn\'t figure out the number of pages. Someone must have changed something.');
-      }
-    </script>
+    <span id="bottom"></span>
+    
+    <!-- <script>
+    //   try {
+    //     document.getElementById('404-pages-count').innerText = 'only ' + document.getElementsByTagName('nav')[0].children.length;
+    //   } catch (err) {
+    //     console.error('Hey, there! I couldn\'t figure out the number of pages. Someone must have changed something.');
+    //   }
+    </script> -->
 
     <!-- FIREBASE -->
     

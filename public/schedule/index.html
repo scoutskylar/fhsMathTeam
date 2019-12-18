@@ -2,31 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <base href="..">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/ico" href="favicon-placeholder-v3.ico">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="shortcut icon" type="image/ico" href="../favicon-placeholder-v3.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/fontawesome.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Schedule - FHSMath</title>
 </head>
 <body>
     <header>
-        <a href="" class="header-title"><span>FHS</span>&#8203;<span>Math</span></a>
+        <a href=".." class="header-title"><span>FHS</span>&#8203;<span>Math</span></a>
     </header>
 
-    <div class="header-nav">
-        <a href="">Home</a>
-        <a href="attendance">Attendance</a>
-        <a href="schedule">Schedule</a>
-        <!-- <a href="events">Events</a> -->
-        <a href="contact">Contact</a>
-    </div>
+    <nav>
+        <a href="..">Home</a>
+        <a href="../attendance">Attendance</a>
+        <a href="../schedule">Schedule</a>
+        <!-- <a href="../events">Events</a> -->
+        <a href="../contact">Contact</a>
+    </nav>
 
     <main>
         <h1 class="body-title">Schedule</h1>
-        <p>Here are some events that we are participating in this year:</p>
-        <table class="banded-table" id="schedule-table">
+        <p class="hide-if-noscript">The following table lists the events that we are participating in this year.</p>
+        <noscript>
+            <style>
+            .hide-if-noscript {
+                display: none !important;
+            }
+            </style>
+            <span class="error-box">
+                The schedule table requires JavaScript. Please turn on JavaScript.
+                The internet must be pretty disappointing to you
+                if you have JavaScript disabled on a regular basis.
+                If you insist on leaving JavaScript disabled, you might be
+                able to look at the <a href="../js/events.json">JSON data</a>
+                for the schedule table. If the link for the JSON data is broken, please
+                <a href="../development">contact the development team</a>.
+            </span>
+        </noscript>
+        <table class="banded-table hide-if-noscript" id="schedule-table">
             <thead>
                 <tr>
                     <th scope="col">Event</td>
@@ -39,7 +54,7 @@
                 </tr>
             </tbody>
         </table>
-        <p>Visit the <a href="events">events</a> page for more details about the events.</p>
+        <p>Visit the <a href="../events">events</a> page for more details about the events.</p>
     </main>
 
     <footer>
@@ -47,12 +62,14 @@
             &copy; 2019 Skylar Smith, Natania Dominianni, and Logan Kincanon.
         </p>
         <p>
-            <a href="development">Development Contact</a>&emsp;
-            <a href="contact">Sponsor Contact</a>
+            <a href="../development">FAQ &amp; Development</a>&emsp;
+            <a href="../contact">Sponsor Contact</a>
         </p>
     </footer>
     
-    <script src="schedule/schedule.js"></script>
+    <span id="bottom"></span>
+    
+    <script src="../schedule/schedule.js"></script>
     
     <!-- FIREBASE -->
     

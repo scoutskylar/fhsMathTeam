@@ -1,11 +1,17 @@
 :root {
   --main-color: white;
-  --nav-link-hover-color: hsla(0, 0%, 0%, 0.2);
   --text-color: black;
-  --text-color-light: rgb(149, 149, 149);
+  --text-light-color: rgb(149, 149, 149);
   --dim-color: rgb(230, 230, 230);
   --accent-color: rgb(182, 0, 0);
   --box-color: silver;
+  
+  /* more specific styling */
+  --nav-link-hover-color: hsla(0, 0%, 0%, 0.2);
+  --button-hover-color: hsla(0, 0%, 0%, 0.05);
+  --large-button-hover-color: rgb(140, 0, 0);
+
+  /* background */
   --background-picture-background-color: white;
   --background-picture-image: url('../images/background-transparent-v0.png');
   --background-picture-overlay-color: rgba(70, 70, 70, 0.2);
@@ -36,6 +42,7 @@ html {
   ), var(--background-picture-image, url('../images/background-transparent-v0.png')) repeat-x,
   var(--background-picture-background-color, white);
   background-size: 50vw;
+  /* CLEARED */
 }
 
 body {
@@ -56,14 +63,18 @@ hr {
   border-color: var(--box-color, silver);
 }
 
-.header-nav {
+body > nav {
   background-color: rgb(182, 0, 0);
   background-color: var(--accent-color, rgb(182, 0, 0));
   color: white;
   color: var(--main-color, white);
 }
 
-.header-nav a:hover {
+body > nav > * {
+  color: inherit;
+}
+
+body > nav a:hover {
   background-color: hsla(0, 0%, 100%, 0.2);
   background-color: var(--nav-link-hover-color, hsla(0, 0%, 100%, 0.2));
 }
@@ -82,7 +93,7 @@ footer {
 /* .header-title > span:nth-child(2) { */
 .header-title {
   color: rgb(149, 149, 149);
-  color: var(--text-color-light, rgb(149, 149, 149));
+  color: var(--text-light-color, rgb(149, 149, 149));
 }
 
 /* .header-title > span:nth-child(1) { */
@@ -127,6 +138,11 @@ input {
   color: var(--text-color, black);
 }
 
+input[type="button"]:not(.large-button):hover, input[type="submit"]:not(.large-button):hover {
+  background-color: hsla(0, 0%, 0%, 0.05);
+  background-color: var(--button-hover-color, hsla(0, 0%, 0%, 0.05));
+}
+
 input.large-button {
   background-color: rgb(182, 0, 0);
   background-color: var(--accent-color, rgb(182, 0, 0));
@@ -134,9 +150,14 @@ input.large-button {
   color: var(--main-color, white);
 }
 
+input[type="button"].large-button:hover, input[type="submit"].large-button:hover {
+  background-color: rgb(140, 0, 0);
+  background-color: var(--large-button-hover-color, rgb(140, 0, 0));
+}
+
 a[href^="mailto:"]::after {
   color: rgb(149, 149, 149);
-  color: var(--text-color-light, rgb(149, 149, 149));
+  color: var(--text-light-color, rgb(149, 149, 149));
 }
 
 footer a[href^="mailto:"]::after,

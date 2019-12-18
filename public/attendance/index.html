@@ -2,26 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <base href="..">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/ico" href="favicon-placeholder-v3.ico">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="shortcut icon" type="image/ico" href="../favicon-placeholder-v3.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/fontawesome.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Attendance - FHSMath</title>
 </head>
 <body>
     <header>
-        <a href="" class="header-title"><span>FHS</span>&#8203;<span>Math</span></a>
+        <a href=".." class="header-title"><span>FHS</span>&#8203;<span>Math</span></a>
     </header>
 
-    <div class="header-nav">
-        <a href="">Home</a>
-        <a href="attendance">Attendance</a>
-        <a href="schedule">Schedule</a>
-        <!-- <a href="events">Events</a> -->
-        <a href="contact">Contact</a>
-    </div>
+    <nav>
+        <a href="..">Home</a>
+        <a href="../attendance">Attendance</a>
+        <a href="../schedule">Schedule</a>
+        <!-- <a href="../events">Events</a> -->
+        <a href="../contact">Contact</a>
+    </nav>
 
     <main>
         <h1 class="body-title">Attendance</h1>
@@ -33,8 +32,8 @@
         <span class="confirmed-box" id="confirmed-box" style="display: none;"></span>
         <span class="info-box" id="info-box" style="display: none;"></span>
         <div id="sign-in-wrapper" style="display: none; margin: 16px 0;">
-            <p>To submit attendance, you must connect your school accout.</p>
-            <input type="button" class="large-button" value="Connect School Account" onclick="signInWithMicrosoft()">
+            <p>To submit attendance, you must log in with your school accout.</p>
+            <input type="button" class="large-button" value="Log In With School Account" onclick="signInWithMicrosoft()">
         </div>
         <form method="POST" action="javascript:void(0);" id="attendance-form" style="display: none">
             <!-- <p>Enter your name and press "I'm here!" so we know you were here today!</p>
@@ -62,10 +61,10 @@
                 <input type="submit" value="Submit Attendance" id="attendance-submit">
             </p>
         </form>
-        <hr id="attendance-bottom-hr">
+        <div style="display: none;"><hr id="attendance-bottom-hr"></div>
         <div>
-            <p>If you have problems, try resetting your account connection.</p>
-            <input type="button" class="normal-button" value="Reset Account Connection" onclick="signOut()">
+            <input type="button" value="Log Out" onclick="signOut()">
+            <label>If you have problems or want to log out, you can click this button.</label>
         </div>
     </main>
 
@@ -74,10 +73,12 @@
             &copy; 2019 Skylar Smith, Natania Dominianni, and Logan Kincanon.
         </p>
         <p>
-            <a href="development">Development Contact</a>&emsp;
-            <a href="contact">Sponsor Contact</a>
+            <a href="../development">FAQ &amp; Development</a>&emsp;
+            <a href="../contact">Sponsor Contact</a>
         </p>
     </footer>
+
+    <span id="bottom"></span>
 
     <noscript>
         <style>
@@ -117,6 +118,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
 
     <!-- Attendance script -->
-    <script src="attendance/attendance.js"></script>
+    <script src="../attendance/attendance.js"></script>
 </body>
 </html>

@@ -4,16 +4,17 @@
 .confirmed-box,
 .info-box
 {
-  display: inline-block;
+  display: table;
+  position: relative;
   color: black;
   border: 2px solid;
-  padding: 0.375rem;
-  padding-top: 0.725rem;
+  padding: 0.625rem;
+  padding-top: 0.75rem;
+  padding-left: 2.125rem;
   border-radius: 4px;
   font-weight: bold;
-  vertical-align: middle;
+  margin: 1em 0;
 }
-
 
 /* ICON FORMATTING (Font Awesome) */
 .warning-box::before,
@@ -21,20 +22,23 @@
 .confirmed-box::before,
 .info-box::before
 {
+  display: block;
+  position: absolute;
+  top: 0.375rem;
+  bottom: 0.375rem;
+  left: 0.25rem;
+
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  display: block;
+  
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1;
 
   font-family: 'Font Awesome';
   font-weight: 900;
 
-  margin-right: 0.5rem;
-  margin-top: -0.3rem;
-  float: left;
+  /* float: left; */
   font-size: 1.5rem;
 }
 

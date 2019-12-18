@@ -33,7 +33,7 @@ function setEventType(calendar) {
   xhr.onload = function() {
     setEventType(JSON.parse(this.responseText));
   };
-  xhr.open('GET', 'js/events.json');
+  xhr.open('GET', '../js/events.json');
   xhr.send();
 }
 
@@ -59,7 +59,9 @@ function message(text, box) {
   let errorBox = document.getElementById('error-box');
   let confirmedBox = document.getElementById('confirmed-box');
   let infoBox = document.getElementById('info-box');
+  /* REMOVED:
   let hr = document.getElementById('attendance-bottom-hr');
+  */
   message = (function(text, box) {
     box = box || 'info';
     errorBox.style.display = 'none';
@@ -67,15 +69,15 @@ function message(text, box) {
     infoBox.style.display = 'none';
     if (text === undefined) {
       let attendanceFormCheck = document.getElementById('attendance-form');
-      if (!attendanceFormCheck || attendanceFormCheck.style.display == 'none') {
+      /* if (!attendanceFormCheck || attendanceFormCheck.style.display == 'none') {
         hr.style.display = 'none';
       } else {
         hr.style.display = '';
-      }
+      } */
       return;
-    } else {
+    }/*  else {
       hr.style.display = '';
-    }
+    } */
     if (box == 'error') {
       errorBox.innerHTML = text;
       errorBox.style.display = '';
@@ -133,6 +135,9 @@ function signInWithMicrosoft() {
     // window.location.reload();
   } else {
     var provider = new firebase.auth.OAuthProvider('microsoft.com');
+    provider.setCustomParameters({
+      prompt: 'select_account'
+    })
     firebase.auth().signInWithRedirect(provider);
   }
 }
@@ -140,7 +145,7 @@ function signInWithMicrosoft() {
 // firebase.auth().getRedirectResult().then(function(result) {
 //   user = result.user;
 //   if (!user) {
-//     message('To submit attendance, you must connect your school accout.');
+//     message('To submit attendance, you must log in with your school accout.');
 //     document.getElementById('sign-in-wrapper').style.display = '';
 //   }
 //   console.log(result);
@@ -151,12 +156,11 @@ function signInWithMicrosoft() {
 function signOut() {
   firebase.auth().signOut().then(function() {
     user = null;
-    location.reload();
-    // console.info('The account connection has been reset.');
-    // message('The account connection has been reset successfully!', 'confirm');
+    // location.reload();
+    message('You have been logged out successfully!', 'confirm');
   }).catch(function(error) {
     console.log('An error during signout. Error:', error);
-    message('An error occurred while trying to reset the account connection.', 'error');
+    message('An error occurred while trying to log out.', 'error');
   });
 }
 
