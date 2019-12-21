@@ -7,20 +7,31 @@ function makeTable(tableId, calendar) {
 
   var thead = tableElem.getElementsByTagName('thead')[0];
 
-  //data rows
-  for (var event of calendar) {
-    try {
-      row = document.createElement('tr');
-      cell = document.createElement('td');
-      cell.appendChild(document.createTextNode(event.title));
-      row.appendChild(cell);
-      cell = document.createElement('td');
-      cell.appendChild(document.createTextNode(event.dateString));
-      row.appendChild(cell);
-      tbody.appendChild(row);
-    } catch (err) {
-      continue;
+  try {
+    //data rows
+    for (var event_i in calendar) {
+      try {
+        row = document.createElement('tr');
+        cell = document.createElement('td');
+        cell.appendChild(document.createTextNode(calendar[event_i].title));
+        row.appendChild(cell);
+        cell = document.createElement('td');
+        cell.appendChild(document.createTextNode(calendar[event_i].dateString));
+        row.appendChild(cell);
+        tbody.appendChild(row);
+      } catch (err) {
+        continue;
+      }
     }
+  } catch (err) {
+    row = document.createElement('tr');
+    cell = document.createElement('td');
+    cell.appendChild(document.createTextNode('The table was unable to load.'));
+    var frown = document.createElement('CODE');
+    frown.appendChild(document.createTextNode(':('));
+    cell.appendChild(frown);
+    row.appendChild(cell);
+    tbody.appendChild(row);
   }
 
   //append to table

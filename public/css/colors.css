@@ -25,20 +25,20 @@ input:disabled {
 }
 
 html {
-  background-color: rgba(70, 70, 70); /* fallback color */
-  background-color: var(--background-color, rgba(70, 70, 70)); /* fallback color */
+  background-color: rgb(70, 70, 70); /* fallback color */
+  background-color: var(--background-color, rgb(70, 70, 70)); /* fallback color */
   background: linear-gradient(
     to bottom,
     rgba(70, 70, 70, 0.2) 0%,
     rgba(70, 70, 70, 0.2) 20vw,
-    rgba(70, 70, 70) 35vw
+    rgb(70, 70, 70) 35vw
   ), url('../images/background-transparent-v0.png') repeat-x,
   white;
   background: linear-gradient(
     to bottom,
     var(--background-picture-overlay-color, rgba(70, 70, 70, 0.2)) 0%,
     var(--background-picture-overlay-color, rgba(70, 70, 70, 0.2)) 20vw,
-    var(--background-color, rgba(70, 70, 70)) 35vw
+    var(--background-color, rgb(70, 70, 70)) 35vw
   ), var(--background-picture-image, url('../images/background-transparent-v0.png')) repeat-x,
   var(--background-picture-background-color, white);
   background-size: 50vw;

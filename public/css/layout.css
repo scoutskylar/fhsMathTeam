@@ -12,6 +12,7 @@ html {
   max-width: 100vw;
   margin: 0;
   box-sizing: border-box;
+  font-size: 100%;
 }
 
 body {
@@ -32,6 +33,8 @@ body {
 
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-family: var(--font-family, Arial), Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+  font-size: 1em;
 }
 
 body > * {
@@ -54,10 +57,10 @@ header {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  font-size: 3rem;
-  padding: 0.7em 1rem 0.4em 1rem;
+  font-size: 3em;
+  padding: 0.7em 0.3em 0.4em 0.3em;
   line-height: 0.7em;
-  margin: 0 1.5rem 0 0;
+  margin: 0 0.5em 0 0;
   box-sizing: border-box;
   /* max-width: 100%; */
   font-family: Cambria, serif;
@@ -68,13 +71,13 @@ body > nav {
   margin: 0;
   padding: 0 12px;
   overflow: hidden;
+  font-size: 1em;
 }
 
 body > nav > * {
   display: inline-block;
   text-decoration: none;
   padding: 8px;
-  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -87,7 +90,7 @@ main {
 }
 
 main:last-child {
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
 }
 
 footer {
@@ -98,7 +101,7 @@ footer {
   font-weight: bold;
 }
 
-@media all and (max-width: 1280px) {
+@media all and (max-width: 1024px) {
   /* transitions in transitions.css */
   body {
     width: 100%;
@@ -109,7 +112,7 @@ footer {
 }
 
 h1.body-title {
-  margin-top: 1.3rem;
+  margin-top: 0.7em;
   border-bottom: 2px solid;
 }
 
@@ -157,7 +160,7 @@ input[type="button"], input[type="submit"] {
 
 input.large-button {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1em;
   border-width: 0;
   padding: 8px 12px;
 }
@@ -207,13 +210,13 @@ a[href^="mailto:"]::after
 a[target]:not([target="_self"]):not([target=""])::after {
   /* External link - fa-external-link-alt */
   content: "\a0\f35d";
-  font-size: 0.625rem;
+  font-size: 0.625em;
 }
 
 a[href^="mailto:"]::after {
   /* Email link - fa-envelope */
   content: "\a0\f0e0";
-  font-size: 0.875rem;
+  font-size: 0.875em;
   /* Contains
    * color style in
    * colors.css
@@ -234,14 +237,14 @@ a[href^="mailto:"]::after {
   align-items: center;
   flex-direction: row;
   font-weight: bold;
-  border-radius: 1.25rem 0.5rem;
-  padding: 1rem 0;
-  min-height: 5rem;
+  border-radius: 0.833em 0.333em;
+  padding: 0.667em 0;
+  min-height: 3.333em;
   width: fit-content;
   max-width: 100%;
   overflow: auto;
-  font-size: 1.5rem;
-  margin: 1rem 0;
+  font-size: 1.5em;
+  margin: 0.667em 0;
 }
 
 @media all and (max-width: 300px) {
@@ -253,7 +256,7 @@ a[href^="mailto:"]::after {
 }
 
 .quote::before, .quote::after {
-  font-size: 5rem;
+  font-size: 3.34em;
   opacity: 0.5;
   overflow: visible;
   
@@ -268,17 +271,17 @@ a[href^="mailto:"]::after {
 .quote::before {
   content: '\0201c';
   align-self: flex-start;
-  margin-top: -1.7rem;
-  margin-right: 8px;
-  margin-bottom: -0.6em;
+  margin-top: -0.334em;
+  margin-right: 0.1em;
+  margin-bottom: -0.12em;
 }
 
 .quote::after {
   content: '\0201e';
   align-self: flex-end;
-  margin-bottom: -1rem;
-  margin-left: 8px;
-  margin-top: -0.7em;
+  margin-bottom: -0.2em;
+  margin-left: 0.1em;
+  margin-top: -0.14em;
 }
 
 .banded-table-image-source {

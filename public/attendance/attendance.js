@@ -1,31 +1,39 @@
 message('Initializing...');
 
 function setEventType(calendar) {
-  if (!calendar) return null;
-  const now = new Date(new Date().toDateString()).getTime() / 1000;
-  let eventTypes = [];
-  for (var event of calendar) {
-    if (now >= event.epoch && now - event.epoch < 86400 && event.type && eventTypes.indexOf(event.type) < 0) {
-      eventTypes.push(event.type);
+  try {
+    if (!calendar) return null;
+    const now = new Date(new Date().toDateString()).getTime() / 1000;
+    let eventTypes = [];
+    //data rows
+    for (var event_i in calendar) {
+      try {
+        const event = calendar[event_i];
+        if (now >= event.epoch && now - event.epoch < 86400 && event.type && eventTypes.indexOf(event.type) < 0) {
+          eventTypes.push(event.type);
+        }
+      } catch (err) {
+        continue;
+      }
     }
-  }
-  if (eventTypes.length > 0) {
-    switch (eventTypes.length) {
-      case 0:
-        document.getElementById('attendance-event-type').innerText = 'event';
-      case 1:
-        document.getElementById('attendance-event-type').innerText = eventTypes[0];
-        break;
-      case 2:
-        document.getElementById('attendance-event-type').innerText = eventTypes[0] + ' or ' + eventTypes[1];
-        break;
-      default:
-        eventTypes[eventTypes.length - 1] = 'or ' + eventTypes[eventTypes.length - 1];
-        document.getElementById('attendance-event-type').innerText = eventTypes.join(', ');
-        break;
+    if (eventTypes.length > 0) {
+      switch (eventTypes.length) {
+        case 0:
+          document.getElementById('attendance-event-type').innerText = 'event';
+        case 1:
+          document.getElementById('attendance-event-type').innerText = eventTypes[0];
+          break;
+        case 2:
+          document.getElementById('attendance-event-type').innerText = eventTypes[0] + ' or ' + eventTypes[1];
+          break;
+        default:
+          eventTypes[eventTypes.length - 1] = 'or ' + eventTypes[eventTypes.length - 1];
+          document.getElementById('attendance-event-type').innerText = eventTypes.join(', ');
+          break;
+      }
+      document.getElementById('attendance-event-specifier').setAttribute('data-show', 'true');
     }
-    document.getElementById('attendance-event-specifier').setAttribute('data-show', 'true');
-  }
+  } catch (err) { }
 }
 
 {
@@ -205,7 +213,7 @@ function pushAttendance() {
     // console.log('Database sign-in succeeded.');
     message('Attendance was submitted successfully!', 'confirm');
   }, function(error) {
-    console.log('Database push failed. Error:', error);
-    message('You are already marked as present.');
+    console.log('Database push failed. Error:\n', error);
+    message('You are already marked as present (or there was a weird error).');
   });
 }
