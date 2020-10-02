@@ -1,100 +1,44 @@
 [
   {
-    "title": "Rose Hulman Contest",
-    "type": "contest",
-    "dateString": "Saturday, Nov. 16",
-    "epoch": 1573862400,
-    "location": "TODO"
-  },
-  {
-    "title": "Franklin College Math Day",
-    "type": "contest",
-    "dateString": "Saturday, Nov. 23",
-    "epoch": 1574467200,
-    "location": "TODO"
-  },
-  {
-    "title": "IML #3",
+    "title": "HS Contest 1",
     "type": "IML",
-    "dateString": "Tuesday, Dec. 10",
-    "epoch": 1575936000,
-    "location": "TODO"
+    "dateString": "October 12",
+    "epoch": 0,
+    "location": "FHS"
   },
   {
-    "title": "IML #4",
+    "title": "HS Contest 2",
     "type": "IML",
-    "dateString": "Tuesday, Jan. 14",
-    "epoch": 1578960000,
-    "location": "TODO"
+    "dateString": "November 10",
+    "epoch": 0,
+    "location": "FHS"
   },
   {
-    "title": "IUPUI HS Contest- Mail In",
-    "type": "contest",
-    "dateString": "Mid Jan.",
-    "epoch": 1577836800,
-    "location": "TODO"
-  },
-  {
-    "title": "AMC Math Test",
-    "type": "contest",
-    "dateString": "Thursday, Jan. 30",
-    "epoch": 1580342400,
-    "location": "TODO"
-  },
-  {
-    "title": "IML #5",
+    "title": "HS Contest 3",
     "type": "IML",
-    "dateString": "Tuesday, Feb 11",
-    "epoch": 1581379200,
-    "location": "TODO"
+    "dateString": "December 8",
+    "epoch": 0,
+    "location": "FHS"
   },
   {
-    "title": "Butler Math Scavenger Hunt",
-    "type": "contest",
-    "dateString": "TBD",
-    "epoch": 1577836800,
-    "location": "TODO"
-  },
-  {
-    "title": "ICTM Contest Meeting",
-    "type": "meeting",
-    "dateString": "Wednesday, March 11",
-    "epoch": 1583884800,
-    "location": "TODO"
-  },
-  {
-    "title": "AIME Contest (must qualify)",
-    "type": "contest",
-    "dateString": "Wednesday, March 11",
-    "epoch": 1583884800,
-    "location": "TODO"
-  },
-  {
-    "title": "IML #6",
+    "title": "HS Contest 4",
     "type": "IML",
-    "dateString": "Tuesday, March 17",
-    "epoch": 1584403200,
-    "location": "TODO"
+    "dateString": "January 5",
+    "epoch": 0,
+    "location": "FHS"
   },
   {
-    "title": "ICTM Permission Forms Due",
-    "type": null,
-    "dateString": "Tuesday, March 17",
-    "epoch": 1584403200,
-    "location": "TODO"
+    "title": "HS Contest 5",
+    "type": "IML",
+    "dateString": "February 9",
+    "epoch": 0,
+    "location": "FHS"
   },
   {
-    "title": "ICTM Contest",
-    "type": "contest",
-    "dateString": "Saturday, Apr. 18",
-    "epoch": 1587168000,
-    "location": "TODO"
-  },
-  {
-    "title": "Mu Alpha Theta Intro/End of Year Celebration",
-    "type": "meeting",
-    "dateString": "Wednesday, Apr. 29",
-    "epoch": 1588118400,
-    "location": "TODO"
+    "title": "HS Contest 6",
+    "type": "IML",
+    "dateString": "March 16",
+    "epoch": 0,
+    "location": "FHS"
   }
 ]
